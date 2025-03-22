@@ -161,9 +161,12 @@ html, body {
       right: 20px;
       background-color: #222;
       border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(99, 99, 99, 0.4);
       z-index: 1000;
+      text-align: center;
+      max-width: 250px;
+      padding-bottom: 20px;
     }
 
     nav#nav-menu.active {
@@ -465,10 +468,11 @@ html, body {
   @media (max-width: 1024px) {
     #nav-menu .lang-switch,
     #nav-menu .instagram-btn {
-      display: flex;
-       justify-content: center;
+        display: flex;
+        justify-content: center;
         margin-top: 15px;
-   }
+        align-items: center;
+    }
 
     #nav-menu .lang-switch {
       gap: 10px;
