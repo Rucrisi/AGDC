@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body class="inicio">
+    
     <div id="header-placeholder"></div>
 
     <main class="main-scrollable">
@@ -27,5 +28,17 @@
     <script src="js/lang.js"></script>
     <script src="js/models.js"></script>
     <script src="js/cookie.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  });
+  </script>
 </body>
+
 </html>
