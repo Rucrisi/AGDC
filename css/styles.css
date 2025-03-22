@@ -608,9 +608,12 @@ html, body {
   }
 
   @media (max-width: 480px) {
+    .logo {
+      width: 100%;
+    }
     .logo a {
-      font-size: 1.5em;
-      margin-left: 0;
+      font-size: 0.5em;
+      margin-left: 5%;
     }
     nav ul {
       flex-direction: column;
