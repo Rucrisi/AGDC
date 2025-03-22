@@ -16,6 +16,53 @@ main {
     flex: 1;
 }
 
+/* Contenedor principal con flexbox */
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header y footer fijos, sin scroll */
+header, footer {
+    flex-shrink: 0;
+}
+
+/* Contenido con scroll */
+.main-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+/* Idiomas */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.lang-switch img {
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.lang-switch img:hover {
+    transform: scale(1.25);
+}
+
 /* Header */
 header {
     display: flex;
@@ -24,18 +71,37 @@ header {
     padding: 20px;
     background-color: #222;
     color: #fff;
+    border-radius: 0 0 25% 25%;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    flex-wrap: wrap;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: 600;
+.logo a {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-left: 10vh;
+}
+
+.logo a:hover {
+    transform: scale(1.2);
+    margin-left: 15vh;
+    color: #FFD700;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-right: 3vh;
     display: flex;
+    font-size: 1.1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 nav ul li {
@@ -48,10 +114,47 @@ nav ul li a {
     font-weight: 600;
 }
 
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    transform: scale(1.2);
+    color: #FFD700;
+}
+
+/* Sección Instagram */
+.instagram-btn {
+    display: inline-flex;
+    margin-right: 5vh;
+    align-items: center;
+    gap: 10px;
+    background-color: #E1306C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.instagram-btn img {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff4d88;
+}
+
 /* Sección Hero */
 .hero {
     width: 100%;
-    height: 100vh; /* 100% de la altura del viewport */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +162,13 @@ nav ul li a {
     background: url('hero.jpg') no-repeat center center/cover;
     color: #fff;
     padding: 20px;
+}
+
+body.inicio .hero {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
@@ -120,6 +230,7 @@ nav ul li a {
     gap: 15px;
     max-width: 400px;
     margin: 0 auto;
+    width: 90%;
 }
 
 .contact-form input,
@@ -158,7 +269,6 @@ nav ul li a {
 .contact-form .btn:hover {
     background-color: #1da851;
 }
-
 
 /* Caja WhatsApp */
 .whatsapp-box {
@@ -237,9 +347,102 @@ nav ul li a {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
     background: #222;
-    color: #fff;
+    padding: 20px;
+    border-radius: 25% 25% 0 0;
+    color: white;
+    z-index: 10;
     margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.6em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .logo a {
+        margin-left: 0;
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .lang-switch {
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 40px 15px;
+        margin: 10px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .instagram-btn {
+        width: 90%;
+        justify-content: center;
+    }
+
+    .whatsapp-box, .contact-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .whatsapp-box img, .contact-box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .whatsapp-box span, .contact-box span {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
