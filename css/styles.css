@@ -80,7 +80,7 @@ html, body {
     text-shadow:
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
-    3px 3px 0 #5a5757;
+    3px 3px 0 #5a4a28;
   }
 
   .logo a:hover {
@@ -191,6 +191,10 @@ html, body {
     border: none;
     color: white;
     cursor: pointer;
+    text-shadow:
+    1px 1px 0 #464646,
+    2px 2px 0 #2e2e2e,
+    3px 3px 0 #5a4a28;
   }
 
   @media (max-width: 1024px) {
@@ -613,7 +617,7 @@ html, body {
     }
     .logo a {
       font-size: 0.5em;
-      margin-left: 5%;
+      margin-left: 15px;
     }
     nav ul {
       flex-direction: column;
@@ -666,7 +670,7 @@ html, body {
       text-align: center;
     }
     footer {
-      font-size: 0.65em;
+      font-size: 0.5em;
     }
     .instagram-btn {
       width: 70%;
