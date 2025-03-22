@@ -79,12 +79,12 @@ header {
 
 .logo a {
     color: white;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
-    margin-left: 10vh;
+    margin-left: 5vh;
 }
 
 .logo a:hover {
@@ -161,6 +161,8 @@ nav a:hover {
     background: url('hero.jpg') no-repeat center center/cover;
     color: #fff;
     padding: 20px;
+
+
 }
 
 body.inicio .hero {
@@ -174,6 +176,9 @@ body.inicio .hero {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 10px;
+    box-shadow:
+        0px 5px 10px rgba(0, 0, 0, 0.3),
+        0px -5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
@@ -208,7 +213,9 @@ body.inicio .hero {
     background: #fff;
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow:
+    0px 5px 10px rgba(0, 0, 0, 0.3),
+    0px -5px 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
 }
 
@@ -356,6 +363,19 @@ footer {
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
 }
 
+.footer-link {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+  }
+
+  .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero h1 {
@@ -445,3 +465,46 @@ footer {
         text-align: center;
     }
 }
+
+/* Cookie */
+.cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cookie-popup button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cookie-popup button:hover {
+    background-color: #1da851;
+  }
+
+  @media (min-width: 600px) {
+    .cookie-popup {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }

@@ -10,8 +10,9 @@
     "hero_text": "Entrenamiento personalizado para alcanzar tus objetivos.",
     "hero_cta": "Contáctame",
     "footer_rights": "&copy; 2025 AGDC Fitness. Todos los derechos reservados.",
-
+    "footer_legal": "Aviso Legal",
     "about_hero_title": "Conoce más sobre mí",
+
     "about_hero_text": "Mi historia, experiencia y pasión por el fitness",
     "about_t1": "Mi Trayectoria",
     "about_p1": "Soy Arturo Galán del Coso, entrenador personal con años de experiencia ayudando a personas a transformar su cuerpo y su vida.",
@@ -27,7 +28,6 @@
     "services_p2": "Sesiones individuales o en grupo, presenciales (zona local) u online vía videollamada. Siempre con seguimiento y ajustes constantes.",
     "services_t3": "Masajes Deportivos",
     "services_p3": "Servicio complementario para la recuperación muscular, mejora de la movilidad y prevención de lesiones.",
-
     "blog_hero_title": "Blog y Novedades",
     "blog_hero_text": "Lo último en entrenamiento, nutrición y estilo de vida fitness",
 
@@ -45,7 +45,21 @@
     "contact_email_label": "Email",
     "contact_email_value": "contacto@agdcfitness.com",
 
-    "instagram_button": "Sígueme en Instagram"
+    "instagram_button": "Sígueme en Instagram",
+
+    "cookie_message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas su uso.",
+    "cookie_accept": "Aceptar",
+
+    "legal_hero_title": "Aviso Legal",
+    "legal_hero_text": "Información legal y condiciones de uso del sitio web",
+    "legal_owner_title": "Titular del sitio web",
+    "legal_owner_text": "Este sitio web pertenece a Arturo Galán del Coso (AGDC Fitness), entrenador personal y responsable del contenido aquí expuesto.",
+    "legal_responsibility_title": "Responsabilidad del contenido",
+    "legal_responsibility_text": "El titular no se hace responsable del mal uso de los contenidos de la web, siendo responsabilidad exclusiva del usuario que accede a ellos o los utiliza.",
+    "legal_ip_title": "Propiedad intelectual",
+    "legal_ip_text": "Todos los textos, imágenes y logotipos utilizados en esta web están protegidos por derechos de autor. Su reproducción no autorizada está prohibida.",
+    "legal_law_title": "Legislación aplicable",
+    "legal_law_text": "Este aviso legal se rige por la legislación española. Cualquier disputa será resuelta en los juzgados del domicilio del titular."
   },
 
   "en": {
@@ -59,6 +73,7 @@
     "hero_text": "Personalized training to reach your goals.",
     "hero_cta": "Contact me",
     "footer_rights": "&copy; 2025 AGDC Fitness. All rights reserved.",
+    "footer_legal": "Legal Notice",
 
     "about_hero_title": "Get to know me",
     "about_hero_text": "My story, experience and passion for fitness",
@@ -79,7 +94,6 @@
 
     "blog_hero_title": "Blog & News",
     "blog_hero_text": "The latest in training, nutrition and fitness lifestyle",
-
     "contact_hero_title": "Contact",
     "contact_hero_text": "Ready to get started? Let’s talk.",
     "contact_form_title": "Send me a message",
@@ -94,6 +108,20 @@
     "contact_email_label": "Email",
     "contact_email_value": "contacto@agdcfitness.com",
 
-    "instagram_button": "Follow me on Instagram"
+    "instagram_button": "Follow me on Instagram",
+
+    "cookie_message": "We use cookies to improve your experience. By continuing, you accept their use.",
+    "cookie_accept": "Accept",
+
+    "legal_hero_title": "Legal Notice",
+    "legal_hero_text": "Legal information and terms of website use",
+    "legal_owner_title": "Website Owner",
+    "legal_owner_text": "This website belongs to Arturo Galán del Coso (AGDC Fitness), personal trainer and responsible for the content displayed here.",
+    "legal_responsibility_title": "Content Responsibility",
+    "legal_responsibility_text": "The owner is not responsible for misuse of the content on this site; such use is the sole responsibility of the user accessing or using it.",
+    "legal_ip_title": "Intellectual Property",
+    "legal_ip_text": "All texts, images, and logos used on this site are protected by copyright. Unauthorized reproduction is prohibited.",
+    "legal_law_title": "Applicable Law",
+    "legal_law_text": "This legal notice is governed by Spanish law. Any dispute will be resolved in the courts of the owner's residence."
   }
 }
