@@ -14,20 +14,26 @@
     <div id="header-placeholder"></div>
 
     <main class="main-scrollable">
-        <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h1 languajes="hero_title"></h1>
-                <p languajes="hero_text"></p>
-                <a class="btn" languajes="hero_cta" href="contact.html"></a>
-            </div>
+        <section class="login-section">
+          <div class="login-box">
+            <h1 languajes="login_title"></h1>
+            <form class="login-form" id="loginForm">
+              <input type="text" name="email" languajes="login_user_placeholder" placeholder="Usuario o email" required />
+              <input type="password" name="password" languajes="login_pass_placeholder" placeholder="Contraseña" required />
+              <button type="submit" class="btn" languajes="login_button">Entrar</button>
+              <a href="contact.html" class="forgot" languajes="login_forgot">¿Olvidaste tu contraseña?</a>
+              <div id="loginMessage" class="login-message"></div>
+            </form>
+          </div>
         </section>
-    </main>
+      </main>
 
     <div id="footer-placeholder"></div>
 
     <script src="js/lang.js"></script>
     <script src="js/models.js"></script>
     <script src="js/cookie.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
     "nav_services": "Servicios",
     "nav_blog": "Blog",
     "nav_contact": "Contacto",
+    "nav_online": "Acceso Online",
     "nav_logo": "AGDC FITNESS",
     "hero_title": "Transforma tu vida con AGDC Fitness",
     "hero_text": "Entrenamiento personalizado para alcanzar tus objetivos.",
@@ -28,6 +29,7 @@
     "services_p2": "Sesiones individuales o en grupo, presenciales (zona local) u online vía videollamada. Siempre con seguimiento y ajustes constantes.",
     "services_t3": "Masajes Deportivos",
     "services_p3": "Servicio complementario para la recuperación muscular, mejora de la movilidad y prevención de lesiones.",
+
     "blog_hero_title": "Blog y Novedades",
     "blog_hero_text": "Lo último en entrenamiento, nutrición y estilo de vida fitness",
 
@@ -45,6 +47,27 @@
     "contact_email_label": "Email",
     "contact_email_value": "contacto@agdcfitness.com",
     "contact_success": "¡Mensaje enviado con éxito!",
+
+    "login_title": "Iniciar Sesión",
+    "login_user_placeholder": "Usuario o email",
+    "login_pass_placeholder": "Contraseña",
+    "login_button": "Entrar",
+    "login_forgot": "¿Olvidaste tu contraseña?",
+    "login_error": "Usuario o contraseña incorrectos",
+
+
+    "home_greeting": "Hola,",
+    "home_intro": "Estas son tus rutinas personalizadas:",
+    "home_logout": "Cerrar sesión",
+    "home_no_routines": "No tienes rutinas asignadas todavía.",
+    "home_profile": "Mi perfil",
+
+    "profile_title": "Mi perfil",
+    "profile_success": "Datos actualizados correctamente ✅",
+    "profile_name_placeholder": "Nombre",
+    "profile_password_placeholder": "Nueva contraseña (opcional)",
+    "profile_save": "Guardar cambios",
+    "profile_back": "Volver",
 
     "instagram_button": "Sígueme en Instagram",
 
@@ -69,6 +92,7 @@
     "nav_services": "Services",
     "nav_blog": "Blog",
     "nav_contact": "Contact",
+    "nav_online": "Online Access",
     "nav_logo": "AGDC Fitness",
     "hero_title": "Transform your life with AGDC Fitness",
     "hero_text": "Personalized training to reach your goals.",
@@ -95,6 +119,7 @@
 
     "blog_hero_title": "Blog & News",
     "blog_hero_text": "The latest in training, nutrition and fitness lifestyle",
+
     "contact_hero_title": "Contact",
     "contact_hero_text": "Ready to get started? Let’s talk.",
     "contact_form_title": "Send me a message",
@@ -109,6 +134,26 @@
     "contact_email_label": "Email",
     "contact_email_value": "contacto@agdcfitness.com",
     "contact_success": "Message sent successfully!",
+
+    "login_title": "Login",
+    "login_user_placeholder": "Username or email",
+    "login_pass_placeholder": "Password",
+    "login_button": "Sign in",
+    "login_forgot": "Forgot your password?",
+    "login_error": "Incorrect username or password",
+
+    "home_greeting": "Hi,",
+    "home_intro": "Here are your personalized routines:",
+    "home_logout": "Log out",
+    "home_no_routines": "No routines assigned yet.",
+    "home_profile": "My profile",
+
+    "profile_title": "My Profile",
+    "profile_success": "Data updated successfully ✅",
+    "profile_name_placeholder": "Name",
+    "profile_password_placeholder": "New password (optional)",
+    "profile_save": "Save changes",
+    "profile_back": "Back",
 
     "instagram_button": "Follow me on Instagram",
 

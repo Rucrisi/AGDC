@@ -24,7 +24,7 @@ function setLanguage(lang) {
       document.querySelectorAll("[languajes]").forEach(el => {
         const key = el.getAttribute("languajes");
         if (textos[key]) {
-          // Si el elemento es input o textarea, cambia el placeholder
+          // Si es input o textarea, cambiar placeholder
           if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
             el.placeholder = textos[key];
           } else {
@@ -38,12 +38,23 @@ function setLanguage(lang) {
 
 function changeLang(lang) {
   localStorage.setItem("preferredLang", lang);
-  setLanguage(lang);
+  const currentURL = new URL(window.location.href);
+  currentURL.searchParams.set("lang", lang);
+  window.location.href = currentURL.toString();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const lang = getCurrentLang();
   setLanguage(lang);
+
+  // Solo en páginas .php: redirigir con ?lang si no está presente
+  if (window.location.pathname.includes(".php")) {
+    const currentURL = new URL(window.location.href);
+    if (!currentURL.searchParams.get("lang")) {
+      currentURL.searchParams.set("lang", lang);
+      window.location.href = currentURL.toString();
+    }
+  }
 });
 
 
