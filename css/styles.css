@@ -220,11 +220,11 @@ html, body {
       top: 5px;
       right: 10px;
       z-index: 1001;
-      transition: color 1s ease;
+      transition: color 1.5s ease;
     }
 
     .hamburger a {
-        transition: all 1s ease;
+        transition: all 1.5s ease;
       }
 
     .hamburger:active {

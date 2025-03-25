@@ -17,15 +17,20 @@ fetch("models/header.html")
     if (toggle && navMenu) {
       toggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
+        toggle.classList.toggle("open");
+      });
+
+      // Cerrar menú al hacer clic fuera
+      document.addEventListener("click", (event) => {
+        const isClickInside = navMenu.contains(event.target) || toggle.contains(event.target);
+
+        if (!isClickInside && navMenu.classList.contains("active")) {
+          navMenu.classList.remove("active");
+          toggle.classList.remove("open");
+        }
       });
     }
 
-    const hamburger = document.getElementById("hamburger");
-    if (hamburger) {
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("open");
-      });
-    }
   });
 
 // Cargar footer
