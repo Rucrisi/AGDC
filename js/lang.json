@@ -86,12 +86,12 @@
   },
 
   "en": {
-    "nav_home": "Home",
-    "nav_about": "About Me",
-    "nav_services": "Services",
-    "nav_blog": "Blog",
-    "nav_contact": "Contact",
-    "nav_online": "Online Access",
+    "nav_home": "HOME",
+    "nav_about": "ABOUT ME",
+    "nav_services": "SERVICES",
+    "nav_blog": "BLOG",
+    "nav_contact": "CONTACT",
+    "nav_online": "ONLINE ACCESS",
     "nav_logo": "AGDC Fitness",
     "hero_title": "Transform your life with AGDC Fitness",
     "hero_text": "Personalized training to reach your goals.",
@@ -154,7 +154,7 @@
     "profile_save": "Save changes",
     "profile_back": "Back",
 
-    "instagram_button": "Follow me on Instagram",
+    "instagram_button": "FOLLOW ME ON INSTAGRAM",
 
     "cookie_message": "We use cookies to improve your experience. By continuing, you accept their use.",
     "cookie_accept": "Accept",

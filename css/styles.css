@@ -95,13 +95,13 @@ html, body {
     list-style: none;
     padding: 0;
     display: flex;
-    font-size: 1.25em;
+    font-size: 1.2em;
     flex-wrap: wrap;
     justify-content: center;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     text-shadow:
     1px 1px 0 #464646,
-    2px 2px 0 #5b6128;
+    2px 2px 0 #42442a;
   }
 
   nav ul li {
@@ -123,6 +123,9 @@ html, body {
 
   nav .nav_online{
     color: #cf5d1b;
+    text-shadow:
+    1px 1px 0 #615e5e,
+    2px 2px 0 #2c2c2a;
     font-size: 1em;
   }
 
@@ -767,6 +770,12 @@ html, body {
   }
 
   /* ----------------- RESPONSIVE ----------------- */
+  @media (min-width: 1920px) {
+    .instagram-btn{
+      margin-right: 7vh;
+    }
+  }
+
   @media (max-width: 1920px) {
    nav{
     display: flex;
