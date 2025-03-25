@@ -1,19 +1,19 @@
 {
   "es": {
-    "nav_home": "Inicio",
-    "nav_about": "Sobre Mí",
-    "nav_services": "Servicios",
-    "nav_blog": "Blog",
-    "nav_contact": "Contacto",
-    "nav_online": "Acceso Online",
+    "nav_home": "INICIO",
+    "nav_about": "SOBRE MÍ",
+    "nav_services": "SERVICIOS",
+    "nav_blog": "BLOG",
+    "nav_contact": "CONTACTO",
+    "nav_online": "ACCESO ONLINE",
     "nav_logo": "AGDC FITNESS",
     "hero_title": "Transforma tu vida con AGDC Fitness",
     "hero_text": "Entrenamiento personalizado para alcanzar tus objetivos.",
     "hero_cta": "Contáctame",
     "footer_rights": "&copy; 2025 AGDC Fitness. Todos los derechos reservados.",
     "footer_legal": "Aviso Legal",
-    "about_hero_title": "Conoce más sobre mí",
 
+    "about_hero_title": "Conoce más sobre mí",
     "about_hero_text": "Mi historia, experiencia y pasión por el fitness",
     "about_t1": "Mi Trayectoria",
     "about_p1": "Soy Arturo Galán del Coso, entrenador personal con años de experiencia ayudando a personas a transformar su cuerpo y su vida.",
@@ -55,7 +55,6 @@
     "login_forgot": "¿Olvidaste tu contraseña?",
     "login_error": "Usuario o contraseña incorrectos",
 
-
     "home_greeting": "Hola,",
     "home_intro": "Estas son tus rutinas personalizadas:",
     "home_logout": "Cerrar sesión",
@@ -69,7 +68,7 @@
     "profile_save": "Guardar cambios",
     "profile_back": "Volver",
 
-    "instagram_button": "Sígueme en Instagram",
+    "instagram_button": "SÍGUEME EN INSTAGRAM",
 
     "cookie_message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas su uso.",
     "cookie_accept": "Aceptar",
