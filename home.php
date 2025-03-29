@@ -13,7 +13,13 @@ $user_id = $_SESSION["user_id"];
 $lang = $_GET["lang"] ?? "es";
 $table = $lang === "en" ? "rutinas_en" : "rutinas";
 
-$sql = "SELECT * FROM $table WHERE user_id = ?";
+$sql = "
+    SELECT r.*
+    FROM $table r
+    JOIN usuario_rutina ur ON ur.rutina_id = r.id
+    WHERE ur.user_id = ?
+";
+
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -30,7 +36,7 @@ $rutinas = $stmt->get_result();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="static-page">
     <div id="header-placeholder"></div>
 
     <main class="main-scrollable">
@@ -40,19 +46,26 @@ $rutinas = $stmt->get_result();
                 <p languajes="home_intro"></p>
                 <div class="profile-actions">
                     <a href="profile.php" class="btn profile-btn" languajes="home_profile">Mi perfil</a>
+
+                    <?php if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@correo.com'): ?>
+                        <a href="control_panel.php" class="btn btn-admin" languajes="home_admin_control"></a>
+                    <?php endif; ?>
+
                     <a href="php/logout.php" class="btn logout-btn" languajes="home_logout"></a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section-card">
             <?php if ($rutinas->num_rows > 0): ?>
-                <?php while($r = $rutinas->fetch_assoc()): ?>
-                    <div class="routine-card">
-                        <h2><?php echo htmlspecialchars($r["title"]); ?></h2>
-                        <p><?php echo nl2br(htmlspecialchars($r["description"])); ?></p>
-                    </div>
-                <?php endwhile; ?>
+                <div class="routines-grid">
+                    <?php while($r = $rutinas->fetch_assoc()): ?>
+                        <div class="routine-card">
+                            <h2><?php echo htmlspecialchars($r["title"]); ?></h2>
+                            <p><?php echo nl2br(htmlspecialchars($r["description"])); ?></p>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
             <?php else: ?>
                 <p languajes="home_no_routines"></p>
             <?php endif; ?>

@@ -44,7 +44,7 @@ $user = $result->fetch_assoc();
   <title>AGDC Fitness - Personal Trainer</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="inicio">
+<body class="static-page">
   <div id="header-placeholder"></div>
 
   <main class="main-scrollable profile-section">
