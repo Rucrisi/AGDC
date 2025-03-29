@@ -36,7 +36,7 @@ $rutinas = $stmt->get_result();
     <main class="main-scrollable">
         <section class="hero">
             <div class="hero-content">
-                <h1><span languajes="home_greeting"></span> <?php echo $_SESSION["nombre"]; ?> 👋</h1>
+                <h1><span languajes="home_greeting"></span> <?php echo $_SESSION["name"]; ?> 👋</h1>
                 <p languajes="home_intro"></p>
                 <div class="profile-actions">
                     <a href="profile.php" class="btn profile-btn" languajes="home_profile">Mi perfil</a>
@@ -49,8 +49,8 @@ $rutinas = $stmt->get_result();
             <?php if ($rutinas->num_rows > 0): ?>
                 <?php while($r = $rutinas->fetch_assoc()): ?>
                     <div class="routine-card">
-                        <h2><?php echo htmlspecialchars($r["titulo"]); ?></h2>
-                        <p><?php echo nl2br(htmlspecialchars($r["descripcion"])); ?></p>
+                        <h2><?php echo htmlspecialchars($r["title"]); ?></h2>
+                        <p><?php echo nl2br(htmlspecialchars($r["description"])); ?></p>
                     </div>
                 <?php endwhile; ?>
             <?php else: ?>

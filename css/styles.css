@@ -1,7 +1,7 @@
 /* ---------------------- ESTILOS GENERALES ---------------------- */
 html, body {
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -9,6 +9,7 @@ html, body {
     flex-direction: column;
     overflow-x: hidden;
     width: 100%;
+
   }
 
   main {
@@ -69,6 +70,24 @@ html, body {
     z-index: 1;
   }
 
+  body.static-page {
+    background-image: url("../img/gym.webp"); /* ajusta la ruta si es necesario */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  body.contact-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* oscurece un poco */
+    z-index: 0;
+  }
+
 
   /* ---------------------- HEADER Y NAVEGACIÓN ---------------------- */
   header {
@@ -111,7 +130,7 @@ html, body {
     font-weight: bold;
     transition: all 0.3s ease;
     display: inline-block;
-    margin-left: 10vh;
+    margin-left: 7vh;
     text-shadow:
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
@@ -123,12 +142,19 @@ html, body {
     color: #FFD700;
   }
 
+  nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+  }
+
   nav ul {
-    font-weight: bold;
     list-style: none;
     padding: 0;
     display: flex;
-    font-size: 1.2em;
+    font-size: 1em;
     flex-wrap: wrap;
     justify-content: center;
     letter-spacing: -1.5px;
@@ -138,7 +164,8 @@ html, body {
   }
 
   nav ul li {
-    margin-left: 20px;
+    margin-left: 10px;
+    padding: 5px;
   }
 
   nav ul li a, nav a {
@@ -171,6 +198,26 @@ html, body {
     z-index: 1000;
   }
 
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.5s;
+    text-shadow:
+    1px 1px 0 #464646,
+    2px 2px 0 #2e2e2e,
+    1px 2px 0 #353531;
+    box-shadow:
+    1px 1px 0 #464646,
+    2px 2px 0 #2e2e2e,
+    4px 3px 0 #52271a;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+  }
  /* ---------------------- IDIOMAS ---------------------- */
   .lang-switch {
     display: flex;
@@ -196,17 +243,18 @@ html, body {
 
   /* ----------------- INSTAGRAM BOTÓN ------------------- */
 .instagram-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5x;
     background: linear-gradient(135deg, #d63a6e 0%, #fd125d 50%, #d63a6e 100%);
     color: white;
     padding: 10px 10px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 15px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    margin: 20px;
+    margin: 10px;
     text-shadow:
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
@@ -214,12 +262,13 @@ html, body {
     box-shadow:
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
-    4px 3px 0 #631256;
+    2px 3px 0 #631256;
+
   }
 
   .instagram-btn img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border-radius: 5px;
     box-shadow:
     1px 1px 0 #464646,
@@ -246,7 +295,7 @@ html, body {
     3px 3px 0 #5a4a28;
   }
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1360px) {
     .hamburger {
       display: block;
       position: absolute;
@@ -284,7 +333,7 @@ html, body {
         z-index: 1000;
         text-align: center;
         max-width: 200px;
-        max-height: 400px;
+        max-height: 450px;
         box-shadow:
           1px 1px 0 #464646,
           2px 2px 0 #2e2e2e,
@@ -330,11 +379,12 @@ html, body {
 
   body.inicio .hero {
     height: 40vh;
+    margin-bottom: 0;
   }
 
   .hero-content {
     background: rgba(0, 0, 0, 0.5);
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow:
       0px 5px 10px rgba(0, 0, 0, 0.6),
@@ -351,7 +401,7 @@ html, body {
     margin: 10px 0;
   }
 
-  .btn {
+  .btn-hero {
     display: inline-block;
     padding: 10px 20px;
     background: linear-gradient(135deg, #c55f25 0%, #db3e0e 50%, #c55f25 100%);
@@ -359,7 +409,7 @@ html, body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: 1s;
+    transition: 0.5s;
     text-shadow:
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
@@ -370,17 +420,57 @@ html, body {
     4px 3px 0 #52271a;
   }
 
-  .btn:hover {
-    background: #e64a19;
-    transition: 1s;
+  .btn-hero:hover {
+    transform: scale(1.05);
   }
+
+  .hero-contact {
+    font-size: 1.5em;
+    letter-spacing: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #bdb656;
+    padding: 20px;
+    z-index: 1;
+    font-weight: 700;
+  }
+
+  .hero-contact p {
+    margin-top: 10px;
+    font-size: 1.15em;
+
+    color: #000000;
+  }
+
+  .hero-content-contact {
+    width:100vh;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow:
+      0px 5px 10px rgba(0, 0, 0, 0.6),
+      0px -5px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-content-contact h1 {
+    font-size: 2em;
+    margin: 5px;
+    margin-bottom: 0;
+    text-shadow:
+    1px 1px 0 #5d643c,
+    2px 2px 0 #2e2e2e,
+    1px 2px 0 #353531;
+    font-weight: 800;
+  }
+
 
   /* ---------------------- SECCIONES ---------------------- */
   .section {
-    padding: 60px 10px;
+    padding: 20px 20px;
     text-align: center;
-    background: #fff;
-    margin: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 10px;
     border-radius: 10px;
     box-shadow:
       0px 5px 10px rgba(0, 0, 0, 0.3),
@@ -397,7 +487,22 @@ html, body {
     color: #555;
   }
 
-  /* ---------------------- FORMULARIO ---------------------- */
+  /* ----------------------CONTACTO Y FORMULARIO ---------------------- */
+  .contact {
+    letter-spacing: -2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 1.1em;
+  }
+
+  @media (max-width: 1260px) {
+    .contact {
+      grid-template-columns: 1fr; /* una sola columna en tablet/móvil */
+    }
+  }
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -405,6 +510,7 @@ html, body {
     max-width: 400px;
     margin: 0 auto;
     width: 90%;
+    height: 300px;
   }
 
   .contact-form input,
@@ -416,11 +522,12 @@ html, body {
     outline: none;
     transition: border-color 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
 
   .contact-form input:focus,
   .contact-form textarea:focus {
-    border-color: #25D366;
+    border-color: #050505;
     box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
   }
 
@@ -458,6 +565,7 @@ html, body {
     max-width: 380px;
     margin: 0 auto;
     transition: transform 0.2s ease-in-out;
+    font-size: 1.3em;
   }
 
   .whatsapp-box:hover, .contact-box:hover {
@@ -472,14 +580,14 @@ html, body {
 
   .whatsapp-box span {
     font-size: 1.25em;
-    color: #25D366;
+    color: #1cce5d;
     font-weight: bold;
   }
 
   .contact-box span {
     font-size: 1.25em;
     color: #3366cc;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   /* ----------------- FOOTER ------------------ */
@@ -488,8 +596,6 @@ html, body {
     padding: 20px;
     border-radius: 25% 25% 0 0;
     color: white;
-    z-index: 10;
-    margin-top: 20px;
     text-align: center;
     font-size: 0.8em;
     box-shadow:
@@ -628,31 +734,25 @@ html, body {
   }
 
   .login-box {
-    background-color: #fff;
-    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 10px;
     border-radius: 16px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
-    font-size: 22px;
+    font-size: 1.5em;
+    margin-top: 20px;
   }
 
   .login-form input {
-    width: 80%;
+    width: 70%;
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .login-form button.btn {
-    width: 60%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 15px;
   }
 
   .forgot {
@@ -675,6 +775,33 @@ html, body {
     padding: 5px;
     display: inline-block;
     max-width: 100%;
+  }
+
+  .btn-login {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #c55f25 0%, #db3e0e 50%, #c55f25 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.5s;
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-shadow:
+    1px 1px 0 #464646,
+    2px 2px 0 #2e2e2e,
+    1px 2px 0 #353531;
+    box-shadow:
+    1px 1px 0 #464646,
+    2px 2px 0 #2e2e2e,
+    4px 3px 0 #52271a;
+  }
+
+  .btn-login:hover {
+    transform: scale(1.05);
   }
 
   /* --------------- ROUTINE CARD ------------------ */
@@ -822,61 +949,6 @@ html, body {
   }
 
   /* ----------------- RESPONSIVE ----------------- */
-  @media (min-width: 1920px) {
-    .instagram-btn{
-      margin-right: 7vh;
-    }
-  }
-
-  @media (max-width: 1920px) {
-   nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-left: 25%;
-    }
-  }
-
-  @media (max-width: 1440px) {
-    nav{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
-     margin-left: 5%;
-    }
-}
-@media (max-width: 1366px) {
-    nav{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
-     margin-left: 5%;
-    }
-}
-
-@media (max-width: 1280px) {
-  nav{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 10px;
-   margin-left: 0%;
-  }
-}
-
- @media (max-width: 1024px) {
-    nav{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
-     margin-right: 20%;
-    }
-}
-
   @media (max-width: 1440px) {
     #nav-menu .lang-switch,
     #nav-menu .instagram-btn {
@@ -1007,21 +1079,19 @@ html, body {
         width: 90%;
       }
     .hero h1 {
-      font-size: 1.6em;
+      font-size: 1.8em;
     }
     .hero p {
-      font-size: 1em;
+      font-size: 1.2em;
     }
     .section {
-      padding: 30px 10px;
+      padding: 5px 5px;
       margin: 10px;
     }
-    .section h2 {
-      font-size: 1.4em;
+    .hero-content-contact {
+      font-size: 0.8em;
     }
-    .section p {
-      font-size: 1em;
-    }
+
     .btn {
       width: 80%;
       font-size: 1em;

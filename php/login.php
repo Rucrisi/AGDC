@@ -15,7 +15,7 @@ $result = $stmt->get_result();
 
 if ($user = $result->fetch_assoc()) {
     $_SESSION["user_id"] = $user["id"];
-    $_SESSION["nombre"] = $user["nombre"];
+    $_SESSION["name"] = $user["name"];
     echo "success";
 } else {
     echo "error";

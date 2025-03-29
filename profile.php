@@ -12,30 +12,31 @@ $user_id = $_SESSION["user_id"];
 // Actualizar datos si se envió el formulario
 $mensaje = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nuevo_nombre = $_POST["nombre"];
-    $nueva_pass = $_POST["password"];
+    $new_name = $_POST["name"];
+    $new_pass = $_POST["password"];
 
-    if (!empty($nueva_pass)) {
-        $hashed = hash("sha256", $nueva_pass);
-        $stmt = $conn->prepare("UPDATE users SET nombre = ?, password = ? WHERE id = ?");
-        $stmt->bind_param("ssi", $nuevo_nombre, $hashed, $user_id);
+    if (!empty($new_pass)) {
+        $hashed = hash("sha256", $new_pass);
+        $stmt = $conn->prepare("UPDATE users SET name = ?, password = ? WHERE id = ?");
+        $stmt->bind_param("ssi", $new_name, $hashed, $user_id);
     } else {
-        $stmt = $conn->prepare("UPDATE users SET nombre = ? WHERE id = ?");
-        $stmt->bind_param("si", $nuevo_nombre, $user_id);
+        $stmt = $conn->prepare("UPDATE users SET name = ? WHERE id = ?");
+        $stmt->bind_param("si", $new_name, $user_id);
     }
 
     $stmt->execute();
-    $_SESSION["nombre"] = $nuevo_nombre;
-    $mensaje = "Datos actualizados correctamente ✅";
+    $_SESSION["name"] = $new_name;
+    $mensaje = "Success";
 }
 
 // Obtener datos actuales
-$stmt = $conn->prepare("SELECT nombre FROM users WHERE id = ?");
+$stmt = $conn->prepare("SELECT name FROM users WHERE id = ?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,7 +56,7 @@ $user = $result->fetch_assoc();
     <?php endif; ?>
 
     <form method="POST" class="contact-form">
-      <input type="text" name="nombre" value="<?= htmlspecialchars($user['nombre']) ?>" languajes="profile_name_placeholder" placeholder="Nombre" required>
+      <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>" languajes="profile_name_placeholder" placeholder="Nombre" required>
       <input type="password" name="password" languajes="profile_password_placeholder" placeholder="Nueva contraseña (opcional)">
 
       <div class="button-group">

@@ -11,21 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
-<body>
-<div id="header-placeholder"></div>
+<body class="static-page">
+
+    <div id="header-placeholder"></div>
 
     <main class="main-scrollable">
-        <section class="hero">
-            <div class="hero-content">
+        <section class="hero-contact">
+            <div class="hero-content-contact">
                 <h1 languajes="contact_hero_title"></h1>
                 <p languajes="contact_hero_text"></p>
             </div>
         </section>
 
+    <div class="contact">
         <section class="section">
             <h2 languajes="contact_form_title"></h2>
 
-            <form action="php/enviar.php" method="POST" class="contact-form" id="contactForm">
+            <form action="php/send.php" method="POST" class="contact-form" id="contactForm">
                 <input type="text" name="nombre" languajes="contact_name" required>
                 <input type="email" name="email" languajes="contact_email" required>
                 <textarea name="mensaje" rows="5" languajes="contact_message" required></textarea>
@@ -50,6 +52,7 @@
                 <span languajes="contact_email_value"></span>
             </a>
         </section>
+    </div>
 
     </main>
 
