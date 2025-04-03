@@ -61,6 +61,7 @@
     "home_logout": "Cerrar sesión",
     "home_admin_control": "Panel de Control",
     "home_no_routines": "Aún no tienes rutinas asignadas. Contacta con tu entrenador para empezar.",
+    "edit_routine_button": "Editar",
 
     "profile_title": "Mi perfil",
     "profile_success": "Datos actualizados correctamente ✅",
@@ -78,7 +79,7 @@
     "new_user_email": "Correo electrónico",
     "new_user_password": "Contraseña",
     "new_user_button": "Registrar Usuario",
-    "new_user_back": "← Volver al panel",
+    "new_user_back": "⇐ Volver al Home",
 
     "manage_users_title": "Gestión de usuarios",
     "manage_users_description": "Aquí puedes ver, editar o eliminar usuarios registrados.",
@@ -177,6 +178,7 @@
     "home_logout": "Log out",
     "home_admin_control": "Control Panel",
     "home_no_routines": "You don't have any assigned routines yet. Contact your trainer to get started.",
+    "edit_routine_button": "Edit",
 
     "profile_title": "My Profile",
     "profile_success": "Data updated successfully ✅",
@@ -194,7 +196,7 @@
     "new_user_email": "Email address",
     "new_user_password": "Password",
     "new_user_button": "Register User",
-    "new_user_back": "← Back to dashboard",
+    "new_user_back": "⇐ Back to Home",
 
     "manage_users_title": "User Management",
     "manage_users_description": "Here you can view, edit or delete registered users.",

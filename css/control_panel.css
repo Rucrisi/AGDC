@@ -92,6 +92,11 @@
   .btn-assign-2:active {
     background-color: #3e8e41;
   }
+  .form-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
 
   /* Tabla */
   table {
@@ -132,6 +137,27 @@
     background-color: #eaeaea;
   }
 
+  .responsive-table-wrapper {
+    max-height: 600px; /* ajusta este valor si quieres más o menos alto */
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ccc; /* opcional, para distinguir el área de scroll */
+    border-radius: 8px;
+}
+
+  .responsive-table-wrapper table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  .responsive-table-wrapper thead th {
+      position: sticky;
+      top: 0;
+      background-color: #222;
+      z-index: 1;
+  }
+
+
   /* Modals */
   .modal {
     display: none;
@@ -154,12 +180,21 @@
   }
 
   .close-btn {
+    font-size: 32px; /* tamaño más grande */
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+    right: 20px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: #e74c3c; /* color rojo al pasar el cursor, opcional */
+}
 
   .mensaje {
     font-weight: bold;

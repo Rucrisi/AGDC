@@ -2,15 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const openButtons = document.querySelectorAll(".open-edit-modal");
     const modal = document.getElementById("editModal");
     const assignModal = document.getElementById("assignRoutineModal");
+    let currentEditUserId = null;
+    let currentUserId = null;
 
     openButtons.forEach(btn => {
       btn.addEventListener("click", () => {
-        document.getElementById("edit_id").value = btn.dataset.id;
+        const id = btn.dataset.id;
+        document.getElementById("edit_id").value = id;
         document.getElementById("edit_name").value = btn.dataset.name;
         document.getElementById("edit_email").value = btn.dataset.email;
+
+        currentEditUserId = id; // ← Guardamos el ID
         modal.style.display = "flex";
       });
     });
+
 
     window.onclick = function (event) {
       if (event.target === modal) closeModal();
@@ -43,13 +49,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.closeModal = function () {
       modal.style.display = "none";
+
+      if (currentEditUserId) {
+        fetch(`php/get_user_row.php?id=${currentEditUserId}`)
+          .then(res => res.text())
+          .then(html => {
+            // Reemplazar la fila entera del usuario con la nueva info
+            const row = document.querySelector(`tr[data-user-id="${currentEditUserId}"]`);
+            if (row) {
+              row.outerHTML = html;
+            }
+            currentEditUserId = null;
+          });
+      }
     };
 
     window.closeAssignModal = function () {
-      assignModal.style.display = "none";
+      // Refrescar las rutinas antes de cerrar el modal
+      if (currentUserId) {
+        fetch(`php/user_routines.php?user_id=${currentUserId}`)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("rutinasAsignadasContainer").innerHTML = html;
+            assignModal.style.display = "none";
+          });
+      } else {
+        assignModal.style.display = "none";
+      }
     };
 
+
     window.openAssignModal = function (userId) {
+      currentUserId = userId; // Guardamos el ID para usarlo al cerrar
       document.getElementById("assign_user_id").value = userId;
       assignModal.style.display = "flex";
 
@@ -59,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("rutinasAsignadasContainer").innerHTML = html;
         });
     };
+
 
     // Abrir/Cerrar modal de crear rutina
     document.getElementById("btnCrearRutina").addEventListener("click", () => {

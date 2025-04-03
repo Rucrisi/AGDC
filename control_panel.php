@@ -74,11 +74,12 @@ require_once "php/control.php";
                         <input type="text" name="name" placeholder="Nombre completo" languajes="new_user_name" required>
                         <input type="email" name="email" placeholder="Correo electrónico" languajes="new_user_email" required>
                         <input type="password" name="password" placeholder="Contraseña" languajes="new_user_password" required>
+
+                        <div class="form-buttons-container"></div>
                         <button type="submit" class="btn profile-btn" languajes="new_user_button"></button>
-                    </form>
-                    <div class="profile-actions">
-                        <a href="home.php" class="btn back btn-admin" languajes="new_user_back"></a>
+                        <a href="home.php" class="btn back btn-edit" languajes="new_user_back"></a>
                     </div>
+                    </form>
                 </div>
             </section>
         </div>
