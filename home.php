@@ -124,6 +124,7 @@ while ($row = $res_es->fetch_assoc()) {
     </div>
 
     <div id="footer-placeholder"></div>
+
     <script src="js/routine_card.js"></script>
     <script src="js/lang.js"></script>
     <script src="js/models.js"></script>

@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $new_pass = $_POST["password"];
 
     if (!empty($new_pass)) {
-        $hashed = hash("sha256", $new_pass);
+        $hashed = password_hash($new_pass, PASSWORD_DEFAULT);
         $stmt = $conn->prepare("UPDATE users SET name = ?, password = ? WHERE id = ?");
         $stmt->bind_param("ssi", $new_name, $hashed, $user_id);
     } else {
@@ -57,8 +57,15 @@ $user = $result->fetch_assoc();
 
     <form method="POST" class="contact-form">
       <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>" languajes="profile_name_placeholder" placeholder="Nombre" required>
-      <input type="password" name="password" languajes="profile_password_placeholder" placeholder="Nueva contraseña (opcional)">
 
+       <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Password"
+                               required
+                               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                               title=""
+                               languajes="login_error_msg">
       <div class="button-group">
         <button type="submit" class="btn save" languajes="profile_save">Guardar cambios</button>
         <a href="home.php" class="btn back" languajes="profile_back">Volver</a>

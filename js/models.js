@@ -41,7 +41,7 @@ fetch("models/header.html")
     }
 
     if (slides.length > 0) {
-      setInterval(showNextSlide, 5000);
+      setInterval(showNextSlide, 3000);
     }
 
   });

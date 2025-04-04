@@ -21,17 +21,23 @@ function setLanguage(lang) {
       const textos = data[lang];
       if (!textos) return;
 
-      document.querySelectorAll("[languajes]").forEach(el => {
-        const key = el.getAttribute("languajes");
-        if (textos[key]) {
-          // Si es input o textarea, cambiar placeholder
-          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-            el.placeholder = textos[key];
-          } else {
-            el.innerHTML = textos[key];
-          }
-        }
-      });
+        document.querySelectorAll("[languajes]").forEach(el => {
+            const key = el.getAttribute("languajes");
+            const translation = textos[key];
+
+            if (translation) {
+                // Si tiene 'title', solo lo actualizamos a ese texto
+                if (el.hasAttribute("title")) {
+                    el.setAttribute("title", translation);
+                }
+                // Si no tiene 'title', actualizamos contenido o placeholder
+                else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                    el.placeholder = translation;
+                } else {
+                    el.innerHTML = translation;
+                }
+            }
+        });
     })
     .catch(err => console.error("Error cargando idioma:", err));
 }

@@ -73,7 +73,14 @@ require_once "php/control.php";
                     <form method="POST" class="contact-form">
                         <input type="text" name="name" placeholder="Nombre completo" languajes="new_user_name" required>
                         <input type="email" name="email" placeholder="Correo electrónico" languajes="new_user_email" required>
-                        <input type="password" name="password" placeholder="Contraseña" languajes="new_user_password" required>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Password"
+                               required
+                               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                               title=""
+                               languajes="login_error_msg">
 
                         <div class="form-buttons-container"></div>
                         <button type="submit" class="btn profile-btn" languajes="new_user_button"></button>
@@ -95,7 +102,13 @@ require_once "php/control.php";
                 <input type="hidden" name="edit_id" id="edit_id">
                 <input type="text" name="edit_name" id="edit_name" required>
                 <input type="email" name="edit_email" id="edit_email" required>
-                <input type="password" name="edit_password" placeholder="Nueva contraseña (opcional)">
+                <input type="password"
+                               id="password"
+                               name="edit_password"
+                               placeholder="Password"
+                               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                               title=""
+                               languajes="login_error_msg">
                 <button type="submit" name="edit_submit" class="btn profile-btn" languajes="edit_user_save"></button>
                 <button type="button" onclick="closeModal()" class="btn orange-btn" languajes="edit_user_cancel"></button>
             </form>
@@ -146,6 +159,7 @@ require_once "php/control.php";
             </form>
         </div>
     </div>
+
 
     <script src="js/control_panel.js"></script>
     <script src="js/lang.js"></script>

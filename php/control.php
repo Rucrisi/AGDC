@@ -47,20 +47,27 @@ if (isset($_POST["name"])) {
 }
 
 // Asignar rutina
+// Asignar rutina
 if (isset($_POST['asignar_rutina'])) {
     $user_id = (int) $_POST['user_id'];
-    $rutina_ids = $_POST['rutina_id']; // esto es un array
+    $rutina_ids = isset($_POST['rutina_id']) ? $_POST['rutina_id'] : [];
     $menssage = "routine_error";
 
-    foreach ($rutina_ids as $rid) {
-        $rid = (int) $rid;
-        $stmt = $conn->prepare("INSERT IGNORE INTO usuario_rutina (user_id, rutina_id) VALUES (?, ?)");
-        $stmt->bind_param("ii", $user_id, $rid);
-        if ($stmt->execute()) {
-            $menssage = "routine_assigned";
+    if (!empty($rutina_ids)) {
+        foreach ($rutina_ids as $rid) {
+            $rid = (int) $rid;
+            $stmt = $conn->prepare("INSERT IGNORE INTO usuario_rutina (user_id, rutina_id) VALUES (?, ?)");
+            $stmt->bind_param("ii", $user_id, $rid);
+            if ($stmt->execute()) {
+                $menssage = "routine_assigned";
+            }
         }
+    } else {
+        // Opcional: puedes manejar un mensaje especial si no se seleccionó ninguna rutina
+        $menssage = "no_routine_selected";
     }
 }
+
 
 // Eliminar rutina asignada
 if (isset($_POST["eliminar_rutina"])) {

@@ -57,14 +57,14 @@ html, body {
     transform: scale(1);
     transition:
       opacity 2s ease-in-out,
-      filter 2s ease-in-out,
+      filter 1s ease-in-out,
       transform 2s ease-in-out;
   }
 
   .bg-slide.active {
     opacity: 1;
     filter: blur(0);
-    transform: scale(1);
+    transform: scale(1.05);
   }
 
 
@@ -230,6 +230,8 @@ html, body {
   .btn:hover {
     transform: scale(1.05);
   }
+
+
  /* ---------------------- IDIOMAS ---------------------- */
   .lang-switch {
     display: flex;
@@ -482,7 +484,7 @@ html, body {
   .section {
     padding: 20px 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     margin: 10px;
     border-radius: 10px;
     box-shadow:
@@ -495,113 +497,189 @@ html, body {
     margin-bottom: 20px;
   }
 
-  .section p {
-    font-size: 1.1em;
-    color: #555;
-  }
-
-  /* ----------------------CONTACTO Y FORMULARIO ---------------------- */
-  .contact {
-    letter-spacing: -2px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1200px;
-    margin: auto;
-    box-sizing: border-box;
-    font-size: 1.1em;
-  }
-
-  @media (max-width: 1260px) {
-    .contact {
-      grid-template-columns: 1fr; /* una sola columna en tablet/móvil */
+    .section p {
+        font-size: 1.1em;
+        color: #555;
     }
-  }
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-    width: 90%;
-    height: 300px;
-  }
 
-  .contact-form input,
-  .contact-form textarea {
-    padding: 12px 15px;
-    font-size: 1em;
-    border: 1px solid #ccc;
+/* ---------------------- SERVICIOS ---------------------- */
+    .section-services {
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    margin-inline: 5vh;
+    margin-block: 20px;
     border-radius: 10px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-  }
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3), 0px -5px 10px rgba(0, 0, 0, 0.3);
+    }
 
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #050505;
-    box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
-  }
+    .section-services h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-decoration: underline;
+    }
 
-  .contact-form textarea {
-    resize: none;
-  }
+    .section-services p {
+    padding: 20px 20px;
+    white-space: pre-line; /* para que \n en JSON se vea como saltos de línea */
+    font-size: 1.3rem;
+    line-height: 1.6;
+    }
 
-  .contact-form .btn {
-    align-self: flex-end;
-    background-color: #25D366;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 8px;
-    color: #fff;
-    transition: background-color 0.3s ease;
-  }
-
-  .contact-form .btn:hover {
-    background-color: #1da851;
-  }
-
-  /* ----------- CONTACTO: WhatsApp y Mail -------------- */
-  .whatsapp-box, .contact-box {
-    text-decoration: none;
+    .section-services .services-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    background-color: #e6f9f0;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 380px;
-    margin: 0 auto;
-    transition: transform 0.2s ease-in-out;
-    font-size: 1.3em;
-  }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
 
-  .whatsapp-box:hover, .contact-box:hover {
-    transform: scale(1.03);
-  }
+    .section-services .services-text {
+    flex: 1 1 60%;
+    }
 
-  .whatsapp-box img, .contact-box img {
-    border-radius: 12px;
-    width: 50px;
-    height: 50px;
-  }
+    .section-services .services-image {
+    bottom: 10px;
+    flex: 1 1 20%;
+    text-align: center;
+    }
 
-  .whatsapp-box span {
-    font-size: 1.25em;
-    color: #1cce5d;
-    font-weight: bold;
-  }
+    .section-services .services-image img {
+    max-width: 60%;
+    height: auto;
+    }
 
-  .contact-box span {
-    font-size: 1.25em;
-    color: #3366cc;
-    font-weight: 700;
-  }
+
+@media screen and (max-width:1024px) {
+    .section-services {
+    padding: 10px 10px;
+    margin-inline: 5px;
+    margin-block: 10px;
+    border-radius: 8px;
+    }
+
+    .section-services h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+
+    }
+
+    .section-services p {
+    font-size: 1rem;
+    padding: 15px 10px;
+    line-height: 1.5;
+    }
+
+    .section-services .services-content {
+    flex-direction: column;
+    }
+
+
+
+}
+
+  /* ----------------------CONTACTO Y FORMULARIO ---------------------- */
+      .contact {
+        letter-spacing: -2px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: auto;
+        box-sizing: border-box;
+        font-size: 1.1em;
+      }
+
+      @media (max-width: 1260px) {
+        .contact {
+          grid-template-columns: 1fr; /* una sola columna en tablet/móvil */
+        }
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+        width: 90%;
+        height: 300px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 12px 15px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #050505;
+        box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
+      }
+
+      .contact-form textarea {
+        resize: none;
+      }
+
+      .contact-form .btn {
+        align-self: flex-end;
+        background-color: #25D366;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 8px;
+        color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-form .btn:hover {
+        background-color: #1da851;
+      }
+
+      /* ----------- CONTACTO: WhatsApp y Mail -------------- */
+      .whatsapp-box, .contact-box {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        background-color: #e6f9f0;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        max-width: 380px;
+        margin: 10px auto;
+        transition: transform 0.2s ease-in-out;
+        font-size: 1.3em;
+      }
+
+      .whatsapp-box:hover, .contact-box:hover {
+        transform: scale(1.03);
+      }
+
+      .whatsapp-box img, .contact-box img {
+        border-radius: 12px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-box span {
+        font-size: 1.25em;
+        color: #1cce5d;
+        font-weight: bold;
+      }
+
+      .contact-box span {
+        font-size: 1.25em;
+        color: #3366cc;
+        font-weight: 700;
+      }
 
   /* ----------------- FOOTER ------------------ */
   footer {
@@ -736,19 +814,20 @@ html, body {
   }
 
   /* ------------------ LOGIN ------------------ */
-  .login-section {
+    .login-section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: underline;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 60vh;
     padding: 10px 20px;
-  }
+    }
+    .title{
+    text-decoration: underline;
+    }
 
-  .login-box {
+    .login-box {
     background: rgba(255, 255, 255, 0.9);
-    padding: 10px 10px;
     border-radius: 16px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -756,31 +835,37 @@ html, body {
     text-align: center;
     font-size: 1.5em;
     margin-top: 20px;
-  }
+    }
 
-  .login-form input {
+    .login-form input {
     width: 70%;
     padding: 15px;
-    margin: 10px 0;
+    margin-inline: 5%;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  }
 
-  .forgot {
+    }
+
+    .login-form input:focus {
+    border-color: gray;
+    outline: none;
+    }
+
+    .forgot {
     display: block;
     margin-top: 15px;
     font-size: 15px;
     color: #666;
     text-decoration: none;
-  }
+    }
 
-  .forgot:hover {
+    .forgot:hover {
     text-decoration: underline;
-  }
+    }
 
-  .login-message {
+    .login-message {
     font-size: 15px;
     margin-top: 15px;
     font-weight: bold;
@@ -788,14 +873,13 @@ html, body {
     padding: 5px;
     display: inline-block;
     max-width: 100%;
-  }
+    }
 
-  .btn-login {
+    .btn-login {
     display: inline-block;
     padding: 10px 20px;
     background: linear-gradient(135deg, #c55f25 0%, #db3e0e 50%, #c55f25 100%);
     color: #fff;
-    text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: 0.5s;
@@ -811,30 +895,52 @@ html, body {
     1px 1px 0 #464646,
     2px 2px 0 #2e2e2e,
     4px 3px 0 #52271a;
-  }
+    }
 
-  .btn-login:hover {
+    .btn-login:hover {
     transform: scale(1.05);
-  }
+    }
+
+    .password-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+    }
+    .password-wrapper input {
+        margin-block: 5%;
+        margin-inline: 10%;
+    }
+
+    #togglePassword {
+        position: absolute;
+        right: 40px;
+        cursor: pointer;
+        color: #666;
+        font-size: 15px;
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
 
   /* ----------------- PROFILE CARD ---------------- */
-  .profile-section {
+.profile-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
     padding: 2rem;
-  }
+}
 
-  .profile-card {
+.profile-card {
     background: #fff;
     border-radius: 15px;
-    padding: 10px;
-    max-width: 400px;
+    padding: 20px;
+    max-width: 500px;
     width: 100%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-  }
+    max-height: 300px;
+}
 
   .profile-card h1 {
     font-size: 2em;
