@@ -11,6 +11,7 @@ fetch("models/header.html")
       setLanguage(lang);
     }
 
+    // Menú hamburguesa
     const toggle = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
 
@@ -20,10 +21,8 @@ fetch("models/header.html")
         toggle.classList.toggle("open");
       });
 
-      // Cerrar menú al hacer clic fuera
       document.addEventListener("click", (event) => {
         const isClickInside = navMenu.contains(event.target) || toggle.contains(event.target);
-
         if (!isClickInside && navMenu.classList.contains("active")) {
           navMenu.classList.remove("active");
           toggle.classList.remove("open");
@@ -31,19 +30,9 @@ fetch("models/header.html")
       });
     }
 
-    const slides = document.querySelectorAll('.bg-slide');
-    let current = 0;
-
-    function showNextSlide() {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }
-
-    if (slides.length > 0) {
-      setInterval(showNextSlide, 3000);
-    }
-
+    // Inicializar ambos carruseles (PC y móvil)
+    initCarousel(".background-carousel");
+    initCarousel(".background-carousel-mvl");
   });
 
 // Cargar footer
@@ -52,11 +41,26 @@ fetch("models/footer.html")
   .then(data => {
     document.getElementById("footer-placeholder").innerHTML = data;
 
-    // ✅ Aplicar idioma también después de insertar el footer
     if (typeof setLanguage === "function") {
       setLanguage(lang);
     }
   });
 
+// Función para inicializar un carrusel
+function initCarousel(selector) {
+  const container = document.querySelector(selector);
+  if (!container) return;
 
+  const slides = container.querySelectorAll('.bg-slide');
+  let current = 0;
 
+  function showNextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  if (slides.length > 0) {
+    setInterval(showNextSlide, 3000);
+  }
+}
